@@ -15,12 +15,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        return View("IniciarSesion");
     }
 
-    public IActionResult Privacy()
+    public IActionResult PaginaPrincipal()
     {
-        return View();
+        return View("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

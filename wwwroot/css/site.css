@@ -16,3 +16,24 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#player {
+  position: absolute;
+  top: 43.5%;
+  left: 40%;
+  width: 10%;
+}
+
+#play {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  width: 10%;
+}
+
+.NuevoJuego {
+  position: absolute;
+  top: 20%;
+  left: 44.5%;
+  width: 10%;
+}
