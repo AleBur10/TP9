@@ -1,8 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "DeltaGames";
+    ViewData["Title"] = "Home Page";
+    var Juego = ViewBag.listaJuegos;
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">DELTA GAMES</h1>
+    <a href="/deltagames.png"></a>
+</div>
+
+@{
+    @foreach (Juego item in @ViewBag.listaJuegos)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="@item.Imagen" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.Nombre</h5>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJuego" onclick="MostrarInfoJuego(@item.IdJuego)">
+                    Más info
+                </button>
+            </div>
+        </div>
+    }
+
+}
+
+
+<!-- Modal -->
+<div class="modal fade" id="ModalDetalles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="NombreJuego"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <p id="FechaJuego"></p>
+          <p id="TextoModal"></p>
+          <p id="PrecioDelJuego"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
 </div>
