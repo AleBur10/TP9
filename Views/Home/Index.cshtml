@@ -9,13 +9,13 @@
 <div id="carouselExampleControls carouselIndex" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active carouselIndex">
-            <img src="/a.jpg" class="d-block w-100">
+            <img src="/Fifa.jpg" class="d-block w-100">
         </div>
         <div class="carousel-item carouselIndex">
-            <img src="/b.jpg" class="d-block w-100">
+            <img src="/Ark.jpg" class="d-block w-100">
         </div>
         <div class="carousel-item carouselIndex">
-            <img src="/c.jpg" class="d-block w-100">
+            <img src="/Avion.jpg" class="d-block w-100">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -36,7 +36,7 @@
             <img src="@item.Imagen" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">@item.Nombre</h5>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJuego" onclick="MostrarInfoJuego(@item.IdJuego)">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalJuego" onclick="MostrarInfoJuego(@item.IdJuego)">
                     Más info
                 </button>
             </div>
@@ -46,13 +46,13 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="ModalDetalles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="ModalJuego" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content bg-white text-dark">
             <div class="modal-header">
                 <h5 class="modal-title" id="NombreJuego"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -62,7 +62,7 @@
                 <p id="PrecioDelJuego"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

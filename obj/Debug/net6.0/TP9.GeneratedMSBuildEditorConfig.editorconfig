@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\46878021\Downloads\TP9
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/46878021/Downloads/TP9/Views/Home/AgregarJuego.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FySnVlZ28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/46878021/Downloads/TP9/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

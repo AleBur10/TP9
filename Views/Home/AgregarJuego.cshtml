@@ -1,0 +1,10 @@
+<form method="post" action='@Url.Action("GuardarJuego","Home")' enctype="multipart/form-data">
+    <input type="hidden" name="IdJuego" value="@ViewBag.Juego">
+    <input type="text" name="Nombre" placeholder="Nombre">
+    <input type="text" name="Categoria" placeholder="Categoria">
+    <input type="text" name="Descripcion" placeholder="Descripcion del juego">
+    <input type="file" name="Imagen" placeholder="Subí la foto del jugador">
+    <input type="date" name="FechaCreacion" placeholder="Fecha en la que se lanzo">
+    <input type="text" name="Precio" placeholder="Precio"><br>
+    <input Type="submit" value="Guardar Juego">
+</form>
