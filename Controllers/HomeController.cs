@@ -29,6 +29,11 @@ public class HomeController : Controller
         return BD.verInfoJuego(IdJuego);
     }
 
+    public Juego MostrarMasInfoAjax(int IdJuego)
+    {
+        return BD.verInfoJuego(IdJuego);
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

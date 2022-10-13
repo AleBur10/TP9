@@ -36,7 +36,7 @@
             <img src="@item.Imagen" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">@item.Nombre</h5>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJuego" onclick="MostrarInfoJuego(@item.IdJuego)">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalJuego" onclick="MostrarMasInfo(@item.IdJuego)">
                     Más info
                 </button>
             </div>
@@ -46,23 +46,18 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="ModalDetalles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="ModalJuego" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" style="margin-top: 20%;" role="document">
         <div class="modal-content bg-white text-dark">
-            <div class="modal-header">
-                <h5 class="modal-title" id="NombreJuego"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
             <div class="modal-body">
-                <p id="FechaJuego"></p>
-                <p id="TextoModal"></p>
-                <p id="PrecioDelJuego"></p>
+                <p id="FechaCreacion"></p>
+                <p id="Descripcion"></p>
+                <p id="Precio"></p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
             </div>
         </div>
     </div>

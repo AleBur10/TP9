@@ -40,7 +40,7 @@ namespace TP9.Models
             get { return _cantLikes; }
             set { _cantLikes = value; }
         }
-        public string DescripcionJuego
+        public string Descripcion
         {
             get { return _descripcionJuego; }
             set { _descripcionJuego = value; }
