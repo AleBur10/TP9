@@ -1,5 +1,4 @@
-﻿function MostrarInfoJuego(idJ)
-{
+﻿function MostrarInfoJuego(idJ) {
     $.ajax(
         {
             type: 'POST',
@@ -7,12 +6,11 @@
             url: '/Home/MostrarMasInfoAjax',
             data: { IdJuego: idJ },
             success:
-                function(response)
-                {
+                function (response) {
                     $("#FechaJuego").html(response.FechaCreacion);
                     $("#TextoModal").html(response.DescripcionJuego);
                     $("#PrecioDelJuego").html(response.Precio);
                 }
-             
+
         })
 }

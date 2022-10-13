@@ -33,7 +33,16 @@ body {
 
 .NuevoJuego {
   position: absolute;
-  top: 20%;
+  top: 45%;
   left: 44.5%;
   width: 10%;
+}
+
+.OrdenarJuegosIndex{
+  margin-top: 8%;
+  margin-left: 6%;
+}
+.carouselIndex{
+  width: 1500px;
+  height: 300px;
 }

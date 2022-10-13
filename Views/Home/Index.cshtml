@@ -6,16 +6,16 @@
     <h1 class="display-4">DELTA GAMES</h1>
     <a href="/deltagames.png"></a>
 </div>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleControls carouselIndex" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item active carouselIndex">
+            <img src="/a.jpg" class="d-block w-100">
         </div>
-        <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item carouselIndex">
+            <img src="/b.jpg" class="d-block w-100">
         </div>
-        <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-item carouselIndex">
+            <img src="/c.jpg" class="d-block w-100">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -28,11 +28,12 @@
     </button>
 </div>
     <a href='@Url.Action("AgregarJuego","Home")' class="btn btn-info NuevoJuego">Agregar juego</a>
+<div class="row">
 @{
     @foreach (Juego item in @ViewBag.listaJuegos)
     {
-        <div class="card" style="width: 18rem;">
-            <img src="@item.Imagen" class="card-img-top" alt="...">
+        <div class="card OrdenarJuegosIndex" style="width: 14rem;">
+            <img src="@item.Imagen" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">@item.Nombre</h5>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalJuego" onclick="MostrarInfoJuego(@item.IdJuego)">
@@ -41,9 +42,8 @@
             </div>
         </div>
     }
-
 }
-
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="ModalDetalles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
