@@ -20,7 +20,13 @@ public class HomeController : Controller
 
     public IActionResult PaginaPrincipal()
     {
+        ViewBag.listaJuegos = BD.TraerJuegos();
         return View("Index");
+    }
+
+    public Juego MostrarJuegosAjax(int IdJuego)
+    {
+        return BD.verInfoJuego(IdJuego);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

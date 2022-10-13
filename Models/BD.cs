@@ -16,16 +16,16 @@ namespace TP9.Models
     public class BD
     {
 
-        private static string _connectionString = @"Server=A-PHZ2-LUM-17; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-002; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
 
-        public static List<Juego> TraerJuegos(int idJ)
+        public static List<Juego> TraerJuegos()
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * from Juegos where IdJuego = @pidJuego";
-                listaJuegos = db.Query<Juego>(sql, new { pidJuego = idJ }).ToList();
+                string sql = "SELECT * from Juegos";
+                listaJuegos = db.Query<Juego>(sql).ToList();
             }
             return listaJuegos;
         }
@@ -38,6 +38,7 @@ namespace TP9.Models
                 juegoActual = db.QueryFirstOrDefault<Juego>(sql, new { pidJuego = idJ });
             }
             return juegoActual;
+
         }
     }
 }
