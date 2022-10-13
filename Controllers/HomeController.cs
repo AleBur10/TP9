@@ -38,6 +38,7 @@ public class HomeController : Controller
         return BD.verInfoJuego(IdJuego);
     }
 
+<<<<<<< HEAD
     public IActionResult AgregarJuego(int IdJuego)
     {
         ViewBag.Juego = IdJuego;
@@ -58,6 +59,11 @@ public class HomeController : Controller
         ViewBag.detalleJuegos = BD.verInfoJuego(Jue.IdJuego);
         ViewBag.listaJuegos = BD.TraerJuegos();
         return View("Index");
+=======
+    public Juego MostrarMasInfoAjax(int IdJuego)
+    {
+        return BD.verInfoJuego(IdJuego);
+>>>>>>> f79e29c9330e6607b2613653ea71a5cbb0babf6f
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
