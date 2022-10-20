@@ -16,7 +16,7 @@ namespace TP9.Models
     public class BD
     {
 
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-001; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-022; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
 
