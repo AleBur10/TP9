@@ -16,7 +16,7 @@ namespace TP9.Models
     public class BD
     {
 
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-001; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-024; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
 
@@ -47,6 +47,17 @@ namespace TP9.Models
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 registrosInsertados = db.Execute(sql, new { IdJuego = Jug.IdJuego, Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio });
+            }
+            return registrosInsertados;
+        }
+
+        public static int AgregarLikes(int idJ)
+        {
+            int registrosInsertados = 0;
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "UPDATE Juegos SET CantLikes = (CantLikes + 1) WHERE IdJuego = @pidJuego";
+                registrosInsertados = db.Execute(sql, new {pIdJuego = idJ});
             }
             return registrosInsertados;
         }

@@ -64,6 +64,12 @@ public class HomeController : Controller
             return BD.verInfoJuego(IdJuego);
         }
 
+        public IActionResult LikesAjax(int IdJuego)
+        {   
+            ViewBag.Juego = IdJuego;
+            return View("Index");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

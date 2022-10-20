@@ -15,3 +15,18 @@
 
         })
 }
+
+function Likes(idJ) {
+    $.ajax(
+        {
+            type: 'POST',
+            dataType: 'JSON',
+            url: '/Home/LikesAjax',
+            data: { IdJuego: idJ },
+            success:
+                function (response) {
+                    $("#BotonLike").attr("src","/CorazonRojo.jpg");
+                }
+
+        })
+}
