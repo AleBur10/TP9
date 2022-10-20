@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\47026770\\Desktop\\TP9\\TP9.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\47026770\\Desktop\\TP9\\TP9.csproj",
         "packagesPath": "C:\\Users\\47026770\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\47026770\\Desktop\\TP9\\obj\\",
+=======
+    "C:\\Users\\46914677\\Desktop\\TP9\\TP9.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\46914677\\Desktop\\TP9\\TP9.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\46914677\\Desktop\\TP9\\TP9.csproj",
+        "projectName": "TP9",
+        "projectPath": "C:\\Users\\46914677\\Desktop\\TP9\\TP9.csproj",
+        "packagesPath": "C:\\Users\\46914677\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\46914677\\Desktop\\TP9\\obj\\",
+>>>>>>> 9ae337b684fdd6bc6bcfdd40cc88e8f9a9ae2fe2
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\47026770\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\46914677\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 9ae337b684fdd6bc6bcfdd40cc88e8f9a9ae2fe2
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
