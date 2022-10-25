@@ -1,10 +1,28 @@
-<form method="post" action='@Url.Action("GuardarJuego","Home")' enctype="multipart/form-data">
-    <input type="hidden" name="IdJuego" value="@ViewBag.Juego">
-    <input type="text" name="Nombre" placeholder="Nombre">
-    <input type="text" name="Categoria" placeholder="Categoria">
-    <input type="text" name="Descripcion" placeholder="Descripcion del juego">
-    <input type="file" name="Imagen" placeholder="Subí la foto del jugador">
-    <input type="date" name="FechaCreacion" placeholder="Fecha en la que se lanzo">
-    <input type="text" name="Precio" placeholder="Precio"><br>
-    <input Type="submit" value="Guardar Juego">
+
+<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+        <div class="mb-3">
+            <br>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Categoría</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" aria-describedby="emailHelp">
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Imagen</label>
+            <input type="file" class="form-control" id="imagen" aria-describedby="emailHelp">
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Fecha de creación del juego</label>
+            <input type="date" class="form-control" id="fechaCreacion" aria-describedby="emailHelp">
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Precio</label>
+            <input type="text" class="form-control" id="precio" aria-describedby="emailHelp">
+            <br>
+            <button type="submit" class="btn btn-primary" >Submit</button>
 </form>
