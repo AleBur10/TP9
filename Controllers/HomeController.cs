@@ -70,6 +70,14 @@ public class HomeController : Controller
             return View("Index");
         }
 
+        public IActionResult CrearCuentaAjax(Usuario usuario)
+        {
+            BD.AgregarUsuario(usuario);
+            //no se que poner
+            return View("Index");
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
