@@ -97,10 +97,6 @@ body {
   background: #e62222;
  }
  
- .buttonCerrar, .buttonCerrar span {
-  transition: 200ms;
- }
- 
  .buttonCerrar .text {
   transform: translateX(35px);
   color: white;
@@ -158,8 +154,8 @@ body {
   background: #04ca0e;
  }
  
- .buttonComprar, .buttonCerrar span {
-  transition: 200ms;
+ .buttonComprar, .buttonComprar span, .buttonCerrar, .buttonCerrar span {
+  transition: 400ms;
  }
  
  .buttonComprar .text {
@@ -185,7 +181,7 @@ body {
  }
  
  .buttonComprar:hover {
-  background: #ff3636;
+  background: #09a711;
  }
  
  .buttonComprar:hover .text {
