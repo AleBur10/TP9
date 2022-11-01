@@ -15,9 +15,10 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-045; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-010; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
+        private static List<Categoria> listaCategorias = new List<Categoria>();
 
         public static List<Juego> TraerJuegos()
         {
@@ -27,6 +28,15 @@ namespace TP9.Models
                 listaJuegos = db.Query<Juego>(sql).ToList();
             }
             return listaJuegos;
+        }
+        public static List<Categoria> TraerCategorias()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * from Categorias";
+                listaCategorias = db.Query<Categoria>(sql).ToList();
+            }
+            return listaCategorias;
         }
         public static Juego verInfoJuego(int idJ)
         {
@@ -38,16 +48,16 @@ namespace TP9.Models
             }
             return juegoActual;
         }
-        public static int AgregarJuego(Juego Jug)
+        public static void AgregarJuego(Juego Jug)
         {
             int registrosInsertados = 0;
-            string sql = "INSERT INTO Juego(IdJuego, Nombre, CantLikes, Descripcion, FechaCreacion, Imagen, Precio) VALUES(@IdJuego, @Nombre, @CantLikes, @Descripcion, @FechaCreacion, @Imagen, @Precio)";
+            string sql = "INSERT INTO Juegos(Nombre, CantLikes, Descripcion, FechaCreacion, Imagen, Precio) VALUES(@IdJuego, @Nombre, @CantLikes, @Descripcion, @FechaCreacion, @Imagen, @Precio)";
 
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                registrosInsertados = db.Execute(sql, new { IdJuego = Jug.IdJuego, Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio });
+                db.Execute(sql, new { Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio });
+                //db.Execute(sql, Jug);
             }
-            return registrosInsertados;
         }
 
         public static int AgregarLikes(int idJ)

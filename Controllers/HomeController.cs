@@ -30,6 +30,7 @@ public class HomeController : Controller
     public IActionResult PaginaPrincipal()
     {
         ViewBag.listaJuegos = BD.TraerJuegos();
+       
         return View("Index");
     }
 
@@ -40,6 +41,7 @@ public class HomeController : Controller
 
     public IActionResult AgregarJuego(int IdJuego)
     {
+        ViewBag.listaCategorias = BD.TraerCategorias();
         ViewBag.Juego = IdJuego;
         return View();
     }
@@ -54,11 +56,12 @@ public class HomeController : Controller
             }
             Jue.Imagen = Imagen.FileName;
         }
-        ViewBag.Jue = BD.AgregarJuego(Jue);
+        BD.AgregarJuego(Jue);
         ViewBag.detalleJuegos = BD.verInfoJuego(Jue.IdJuego);
         ViewBag.listaJuegos = BD.TraerJuegos();
         return View("Index");
     }
+    
         public Juego MostrarMasInfoAjax(int IdJuego)
         {
             return BD.verInfoJuego(IdJuego);
