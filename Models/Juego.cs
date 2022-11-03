@@ -10,9 +10,12 @@ namespace TP9.Models
         private string _descripcionJuego;
         private DateTime _fechaCreacion;
         private string _imagen;
+
         private int _precio;
 
-        public Juego(int IdJuego, string Nombre, int CantLikes, string DescripcionJuego, DateTime FechaCreacion, string Imagen, int Precio)
+        private int _fkCategoria;
+
+        public Juego(int IdJuego, string Nombre, int CantLikes, string DescripcionJuego, DateTime FechaCreacion, string Imagen, int Precio, int fkCategoria)
         {
             _idJuego = IdJuego;
             _nombre = Nombre;
@@ -21,6 +24,7 @@ namespace TP9.Models
             _fechaCreacion = FechaCreacion;
             _imagen = Imagen;
             _precio = Precio;
+            _fkCategoria = fkCategoria;
 
         }
         public Juego() { }
@@ -59,6 +63,12 @@ namespace TP9.Models
         {
             get { return _precio; }
             set { _precio = value; }
+        }
+
+         public int fkCategoria
+        {
+            get { return _fkCategoria; }
+            set { _fkCategoria = value; }
         }
 
     }

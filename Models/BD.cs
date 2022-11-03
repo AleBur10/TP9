@@ -15,7 +15,7 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-013; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-005; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
         private static List<Categoria> listaCategorias = new List<Categoria>();
@@ -51,11 +51,11 @@ namespace TP9.Models
         public static void AgregarJuego(Juego Jug)
         {
             int registrosInsertados = 0;
-            string sql = "INSERT INTO Juegos(Nombre, CantLikes, Descripcion, FechaCreacion, Imagen, Precio) VALUES(@IdJuego, @Nombre, @CantLikes, @Descripcion, @FechaCreacion, @Imagen, @Precio)";
+            string sql = "INSERT INTO Juegos(Nombre, CantLikes, Descripcion, FechaCreacion, Imagen, Precio, fkCategoria) VALUES(@Nombre, @CantLikes, @Descripcion, @FechaCreacion, @Imagen, @Precio, @fkCategoria)";
 
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                db.Execute(sql, new { Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio });
+                db.Execute(sql, new { Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio, fkCategoria=Jug.fkCategoria });
                 //db.Execute(sql, Jug);
             }
         }
