@@ -9,7 +9,7 @@
             @foreach (Juego item in @ViewBag.listaJuegos)
             {
                 <div class="card OrdenarJuegosIndex" style="width: 14rem;">
-                    <img src="@item.Imagen" class="card-img-top">
+                    <img src="/@item.Imagen" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">@item.Nombre</h5>
                         <h6 class="likes">@item.CantLikes</h6>
