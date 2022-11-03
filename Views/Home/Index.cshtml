@@ -13,9 +13,7 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Nombre</h5>
                         <h6 class="likes">@item.CantLikes</h6>
-                        <button onclick="Likes(@item.IdJuego, this)">
-                            <img class="corazon" src="/CorazonBlanco.jpg">
-                        </button>
+                        <img id="BotonLike" class="corazon" src="/CorazonBlanco.jpg" onclick="Likes(@item.IdJuego, this)">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalJuego"
                         onclick="MostrarMasInfo(@item.IdJuego)">
                             Más info

@@ -4,7 +4,7 @@
         dataType: 'JSON',
         url: '/Home/MostrarMasInfoAjax',
         data: { IdJuego: idJ },
-        success: function(response) {
+        success: function (response) {
             console.log(response);
             $("#FechaCreacion").html("Fecha de lanzamiento: " + response.fechaCreacion.substr(0, response.fechaCreacion.length - 10));
             $("#Descripcion").html(response.descripcion);
@@ -15,17 +15,26 @@
 }
 
 function Likes(idJ, element) {
+    let h6CantLikes = element.parentNode.children[1];
+    let elementIsLiked = element.src.includes('CorazonBlanco.jpg');
     $.ajax({
         type: 'POST',
         dataType: 'JSON',
         url: '/Home/LikesAjax',
-        data: { IdJuego: idJ },
-        success: function(response) {
-            //$("#BotonLike").attr("src","/CorazonRojo.jpg"); 
+        data:
+        {
+            IdJuego: idJ,
+            CantLikes: !elementIsLiked ? -1 : 1 
+        },
+        success: function (response) {
+            console.log(response);
+            if (elementIsLiked) element.src = '/CorazonRojo.jpg';
+            else element.src = '/CorazonBlanco.jpg';
+            h6CantLikes.innerText = response;
         }
 
     })
-    console.log(element);
+    //console.log(element);
 }
 
 function CrearCuenta() {
@@ -34,8 +43,7 @@ function CrearCuenta() {
         dataType: 'JSON',
         url: '/Home/CrearCuentaAjax',
         //data: { IdUsuario: idU },
-        success: function(response) {
-            console.log('me gustan las culonas');
+        success: function (response) {
             let content = "Nombre de usuario: <input type='text' class='play' id='player' name='Nombre' placeholder='Ingrese su nombre'></input>"
             $("#CrearCuenta").html(content);
         }

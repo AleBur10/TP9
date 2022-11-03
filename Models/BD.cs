@@ -15,7 +15,7 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-013; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-036; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
         private static List<Categoria> listaCategorias = new List<Categoria>();
@@ -60,16 +60,26 @@ namespace TP9.Models
             }
         }
 
-        public static int AgregarLikes(int idJ)
+        public static int AgregarLikes(int idJ, int cantLikes)
         {
             int registrosInsertados = 0;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "UPDATE Juegos SET CantLikes = (CantLikes + 1) WHERE IdJuego = @pidJuego";
-                registrosInsertados = db.Execute(sql, new {pIdJuego = idJ});
+                string sql = "UPDATE Juegos SET CantLikes = (CantLikes + @pcantLikes) WHERE IdJuego = @pidJuego";
+                registrosInsertados = db.Execute(sql, new {pIdJuego = idJ, pcantLikes = cantLikes});
             }
             return registrosInsertados;
         }
+
+        public static int VerCantLikes(int idJ)
+        {
+            using(SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT CantLikes FROM Juegos WHERE IdJuego = @pIdJuego";
+                return db.QueryFirstOrDefault<int>(sql, new {pIdJuego = idJ});
+            }
+        }
+
         public static int AgregarUsuario(Usuario usuario)
         {
             int registrosInsertados = 0;

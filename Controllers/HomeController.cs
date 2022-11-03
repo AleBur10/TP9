@@ -67,10 +67,12 @@ public class HomeController : Controller
             return BD.verInfoJuego(IdJuego);
         }
 
-        public IActionResult LikesAjax(int IdJuego)
-        {   
-            ViewBag.Juego = IdJuego;
-            return View("Index");
+        //Retorna la nueva cantidad de likes
+        [HttpPost]
+        public int LikesAjax(int IdJuego, int cantLikes)
+        {
+            BD.AgregarLikes(IdJuego, cantLikes);
+            return BD.VerCantLikes(IdJuego);
         }
 
         public IActionResult CrearCuentaAjax(Usuario usuario)
