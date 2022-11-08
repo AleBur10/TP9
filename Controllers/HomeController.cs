@@ -59,7 +59,7 @@ public class HomeController : Controller
         BD.AgregarJuego(Jue);
         ViewBag.detalleJuegos = BD.verInfoJuego(Jue.IdJuego);
         ViewBag.listaJuegos = BD.TraerJuegos();
-        return View("Index");
+        return RedirectToAction("PaginaPrincipal", "Home");
     }
     
         public Juego MostrarMasInfoAjax(int IdJuego)

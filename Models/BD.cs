@@ -15,7 +15,7 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-036; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-023; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
         private static List<Categoria> listaCategorias = new List<Categoria>();
@@ -67,6 +67,10 @@ namespace TP9.Models
             {
                 string sql = "UPDATE Juegos SET CantLikes = (CantLikes + @pcantLikes) WHERE IdJuego = @pidJuego";
                 registrosInsertados = db.Execute(sql, new {pIdJuego = idJ, pcantLikes = cantLikes});
+            }
+            if(cantLikes == 1)
+            {
+                string SQL = "DELETE FROM LikesxUsuario WHERE IdUsuario";
             }
             return registrosInsertados;
         }
