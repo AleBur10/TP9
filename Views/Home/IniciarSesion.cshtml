@@ -1,4 +1,18 @@
-<form method="get" action='@Url.Action("PaginaPrincipal","Home")' enctype="multipart/form-data">
+<div class="container">
+    <img class="imagenLogin" src="/Delta.png">
+    <form class="formLogin" method="get" action='@Url.Action("PaginaPrincipal","Home")' enctype="multipart/form-data">
+        <h1 class="text-white">Iniciar Sesión</h1>
+        <input class="mb-3" type="text" name="Nombre" placeholder="Ingrese su usuario">
+        <br>
+        <input class="mb-3" type="password" name="Contrasena" placeholder="Ingrese su contraseña">
+        <br>
+        <button class="mb-3 btn btn-primary" type="submit">
+            Ingresar
+        </button>
+    </form>
+</div>
+
+<!--<form method="get" action='@Url.Action("PaginaPrincipal","Home")' enctype="multipart/form-data">
     <input type="text" class="play" id="player" name="Nombre" placeholder="Ingrese su nombre">
     <input class="btn btn-warning" Type="submit" id="play" value="Ingresar">
     <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#ModalIniciarSesion" onclick="CrearCuenta()">
@@ -15,7 +29,7 @@
                 <div class="modal-footer">
                     <button data-bs-dismiss="modal" class="btn btn-warning" Type="submit" id="play"> cerrar </button>
                 </div>
-                
+
             </div>
         </div>
-    </div>
+    </div>-->

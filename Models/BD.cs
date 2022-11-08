@@ -15,7 +15,7 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-036; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-005; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
         private static List<Categoria> listaCategorias = new List<Categoria>();
@@ -55,7 +55,7 @@ namespace TP9.Models
 
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                db.Execute(sql, new { Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio, fkCategoria=Jug.fkCategoria });
+                db.Execute(sql, new { Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio, fkCategoria = Jug.fkCategoria });
                 //db.Execute(sql, Jug);
             }
         }
@@ -66,17 +66,17 @@ namespace TP9.Models
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "UPDATE Juegos SET CantLikes = (CantLikes + @pcantLikes) WHERE IdJuego = @pidJuego";
-                registrosInsertados = db.Execute(sql, new {pIdJuego = idJ, pcantLikes = cantLikes});
+                registrosInsertados = db.Execute(sql, new { pIdJuego = idJ, pcantLikes = cantLikes });
             }
             return registrosInsertados;
         }
 
         public static int VerCantLikes(int idJ)
         {
-            using(SqlConnection db = new SqlConnection(_connectionString))
+            using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 string sql = "SELECT CantLikes FROM Juegos WHERE IdJuego = @pIdJuego";
-                return db.QueryFirstOrDefault<int>(sql, new {pIdJuego = idJ});
+                return db.QueryFirstOrDefault<int>(sql, new { pIdJuego = idJ });
             }
         }
 
@@ -89,7 +89,8 @@ namespace TP9.Models
                 registrosInsertados = db.Execute(sql, new { IdUsuario = usuario.IdUsuario, Nombre = usuario.Nombre });
             }
             return registrosInsertados;
-            
+
         }
+
     }
 }
