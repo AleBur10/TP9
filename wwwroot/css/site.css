@@ -30,13 +30,14 @@ body {
 }
 
 .OrdenarJuegosIndex {
-  margin-top: 8%;
+  top: 30%;
+  margin-top: 10%;
   margin-left: 6%;
 }
 
 .likes {
   font-size: medium;
-  margin-left: 30px;
+  margin-left: 15%;
 }
 
 .corazon {
@@ -46,7 +47,10 @@ body {
 }
 .botonAgregarJuego{
   margin-bottom: -8%;
-  margin-left: 40%;
+  margin-left: 45%;
+}
+.masInfo{
+  margin-top: 5%;
 }
 .buttonCerrar {
   margin-right: 34%;
