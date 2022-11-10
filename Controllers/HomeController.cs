@@ -33,7 +33,10 @@ public class HomeController : Controller
        
         return View("Index");
     }
-
+    public IActionResult ComprarJuego()
+    { 
+        return View();
+    }
     public Juego MostrarJuegosAjax(int IdJuego)
     {
         return BD.verInfoJuego(IdJuego);
