@@ -58,9 +58,8 @@
         }
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="ModalJuego" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" style="margin-top: 20%;" role="document">
+    <div class="modal fade" id="ModalJuego" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="margin-top: 15%;" role="document">
             <div class="modal-content bg-white text-dark">
                 <div class="modal-body">
                     <p id="FechaCreacion"></p>
@@ -68,28 +67,35 @@
                     <p id="Precio"></p>
                 </div>
                 <div class="modal-footer">
-
-                    <button class="noselect buttonCerrar" data-bs-dismiss="modal"><span class="text">Cerrar</span><span
-                            class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                viewBox="0 0 24 24">
+                    <button class="noselect buttonCerrar" data-bs-dismiss="modal">
+                        <span class="text">Cerrar</span>
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                                 <path
                                     d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z">
                                 </path>
-                            </svg></span></button>
+                            </svg>
+                        </span>
+                    </button>
                     <a href='@Url.Action("ComprarJuego","Home")'>
+<<<<<<< HEAD
+                        <button class="noselect buttonComprar" data-bs-dismiss="modal">
+                            <span class="text">Comprar</span>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+=======
                         <button class="noselect buttonComprar" data-bs-dismiss="modal"><span
                                 class="text">Comprar</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg"
                                     width="16" height="16" viewBox="0 0 24 24">
+>>>>>>> 5076612cce91d85db952c4154ef73a5b8bfe99fc
                                     <path
                                         d="M 22.566406 4.730469 L 20.773438 3.511719 C 20.277344 3.175781 19.597656 3.304688 19.265625 3.796875 L 10.476563 16.757813 L 6.4375 12.71875 C 6.015625 12.296875 5.328125 12.296875 4.90625 12.71875 L 3.371094 14.253906 C 2.949219 14.675781 2.949219 15.363281 3.371094 15.789063 L 9.582031 22 C 9.929688 22.347656 10.476563 22.613281 10.96875 22.613281 C 11.460938 22.613281 11.957031 22.304688 12.277344 21.839844 L 22.855469 6.234375 C 23.191406 5.742188 23.0625 5.066406 22.566406 4.730469 Z">
                                     </path>
-                                </svg></span></button>
+                                </svg>
+                            </span>
+                        </button>
                     </a>
                 </div>
-
-            </div>
-            <div class="modal-card">
-                <img id="BotonLike"></p>
             </div>
         </div>
     </div>
