@@ -29,26 +29,18 @@ body {
   width: 10%;
 }
 
-.OrdenarJuegosIndex {
-  top: 30%;
-  margin-top: 10%;
-  margin-left: 6%;
-}
 
 .likes {
   font-size: medium;
-  margin-left: 15%;
+  margin-bottom: -11%;
+  margin-left: 12%;
 }
 
 .corazon {
-
   width: 10%;
-  height: 15%;
+  height: 12%;
 }
-.botonAgregarJuego{
-  margin-bottom: -8%;
-  margin-left: 45%;
-}
+
 .masInfo{
   margin-top: 5%;
 }

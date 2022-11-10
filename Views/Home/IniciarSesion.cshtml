@@ -2,9 +2,9 @@
     <img class="imagenLogin" src="/Delta.png">
     <form class="formLogin" method="get" action='@Url.Action("PaginaPrincipal","Home")' enctype="multipart/form-data">
         <h1 class="text-white">Iniciar Sesión</h1>
-        <input class="mb-3" type="text" name="Nombre" placeholder="Ingrese su usuario">
+        <input class="mb-3" type="text" name="Nombre" placeholder="Ingrese su usuario" required>
         <br>
-        <input class="mb-3" type="password" name="Contrasena" placeholder="Ingrese su contraseña">
+        <input class="mb-3" type="password" name="Contrasena" placeholder="Ingrese su contraseña" required>
         <br>
         <button class="mb-3 btn btn-primary" type="submit">
             Ingresar
