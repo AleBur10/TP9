@@ -15,7 +15,7 @@
 }
 
 function Likes(idJ, element) {
-    let h6CantLikes = element.parentNode.children[1];
+    let h6CantLikes = element.parentNode.children[2];
     let elementIsLiked = element.src.includes('CorazonBlanco.jpg');
     $.ajax({
         type: 'POST',
