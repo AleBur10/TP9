@@ -1,6 +1,6 @@
 <body>
     <div class="container">
-        <form action='@Url.Action("PaginaPrincipal","Home")' style="margin-top: 10%;">
+        <form action='@Url.Action("PaginaPrincipal","Home")' style="margin-top: 10%;" onsubmit="alert('Gracias por su compra')" >
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputEmail4">Titular de Tarjeta</label>
@@ -42,7 +42,7 @@
                     </label>
                 </div>
             </div>
-            <button class="btn btn-success" type="submit" onclick="alert('Gracias por su compra')" style="margin-bottom: 5px;">PAGAR</button>
+            <button class="btn btn-success" type="submit" style="margin-bottom: 5px;">PAGAR</button>
         </form>
     </div>
 </body>
