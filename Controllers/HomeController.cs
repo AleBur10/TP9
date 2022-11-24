@@ -26,15 +26,45 @@ public class HomeController : Controller
     {
         return View("IniciarSesion");
     }
+    public IActionResult VerificarUsuario(Usuario U)
+    {
+        if (U != null)
+        {
+            return RedirectToAction("PaginaPrincipal", "Home");
+        }
+        else
+        {
+            ViewBag.Mensaje = "Las contraseñas no coinciden";
+            return View("Registrarse");
+        }
+    }
+    public IActionResult Registrarse()
+    {
+        return View();
+    }
+    [HttpPost]
+    public IActionResult InsertarUsuario(Usuario U, string Contraseña2)
+    {
+        if (U.Contraseña == Contraseña2)
+        {
+            BD.AgregarUsuario(U);
+            return RedirectToAction("PaginaPrincipal", "Home");
+        }
+        else
+        {
+            ViewBag.Mensaje = "Las contraseñas no coinciden";
+            return View("Registrarse");
+        }
+    }
 
     public IActionResult PaginaPrincipal()
     {
         ViewBag.listaJuegos = BD.TraerJuegos();
-       
+
         return View("Index");
     }
     public IActionResult ComprarJuego()
-    { 
+    {
         return View();
     }
     public Juego MostrarJuegosAjax(int IdJuego)
@@ -64,31 +94,31 @@ public class HomeController : Controller
         ViewBag.listaJuegos = BD.TraerJuegos();
         return RedirectToAction("PaginaPrincipal", "Home");
     }
-    
-        public Juego MostrarMasInfoAjax(int IdJuego)
-        {
-            return BD.verInfoJuego(IdJuego);
-        }
 
-        //Retorna la nueva cantidad de likes
-        [HttpPost]
-        public int LikesAjax(int IdJuego, int cantLikes)
-        {
-            BD.AgregarLikes(IdJuego, cantLikes);
-            return BD.VerCantLikes(IdJuego);
-        }
-
-        public IActionResult CrearCuentaAjax(Usuario usuario)
-        {
-            BD.AgregarUsuario(usuario);
-            //no se que poner
-            return View("Index");
-
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    public Juego MostrarMasInfoAjax(int IdJuego)
+    {
+        return BD.verInfoJuego(IdJuego);
     }
+
+    //Retorna la nueva cantidad de likes
+    [HttpPost]
+    public int LikesAjax(int IdJuego, int cantLikes)
+    {
+        BD.AgregarLikes(IdJuego, cantLikes);
+        return BD.VerCantLikes(IdJuego);
+    }
+
+    public IActionResult CrearCuentaAjax(Usuario usuario)
+    {
+        BD.AgregarUsuario(usuario);
+        //no se que poner
+        return View("Index");
+
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+}

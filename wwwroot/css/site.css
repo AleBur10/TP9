@@ -181,3 +181,10 @@ body {
   margin-left: 30%;
   width: 40%;
 }
+
+.CS{
+  position: absolute;
+  bottom: 96%;
+  right: 8%;
+  color: #eee;
+}

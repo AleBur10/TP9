@@ -5,14 +5,14 @@ namespace TP9.Models
     public class Usuario
     {
         private int _idUsuario;
+        private string _contraseña;
         private string _nombre;
-        private DateTime _fechaHora;
 
-        public Usuario(int IdUsuario, string Nombre, DateTime FechaHora)
+        public Usuario(int IdUsuario, string Contraseña, string Nombre)
         {
             _idUsuario = IdUsuario;
+            _contraseña = Contraseña;
             _nombre = Nombre;
-            _fechaHora = FechaHora;
         }
         public Usuario() { }
         public int IdUsuario
@@ -26,11 +26,10 @@ namespace TP9.Models
             get { return _nombre; }
             set { _nombre = value; }
         }
-
-        public DateTime FechaHora
+        public string Contraseña
         {
-            get { return _fechaHora; }
-            set { _fechaHora = value; }
+            get { return _contraseña; }
+            set { _contraseña = value; }
         }
 
     }

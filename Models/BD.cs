@@ -15,7 +15,7 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-004; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-029; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
         private static List<Categoria> listaCategorias = new List<Categoria>();
@@ -68,7 +68,7 @@ namespace TP9.Models
                 string sql = "UPDATE Juegos SET CantLikes = (CantLikes + @pcantLikes) WHERE IdJuego = @pidJuego";
                 registrosInsertados = db.Execute(sql, new { pIdJuego = idJ, pcantLikes = cantLikes });
             }
-            if(cantLikes == 1)
+            if (cantLikes == 1)
             {
                 string SQL = "DELETE FROM LikesxUsuario WHERE IdUsuario";
             }
@@ -87,13 +87,20 @@ namespace TP9.Models
         public static int AgregarUsuario(Usuario usuario)
         {
             int registrosInsertados = 0;
-            string sql = "INSERT INTO Usuarios(IdUsuario, Nombre) VALUES(@Idusuario, @Nombre)";
+            string sql = "INSERT INTO Usuarios(Contraseña, Nombre) VALUES(@Contraseña, @Nombre)";
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                registrosInsertados = db.Execute(sql, new { IdUsuario = usuario.IdUsuario, Nombre = usuario.Nombre });
+                registrosInsertados = db.Execute(sql, new { Contraseña = usuario.Contraseña, Nombre = usuario.Nombre });
             }
             return registrosInsertados;
-
+        }
+        public static Usuario BuscarUsuario(Usuario U)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Usuarios WHERE IdUsuario = @U.IdUsuario";
+                return db.QueryFirstOrDefault<Usuario>(sql);
+            }
         }
 
     }
