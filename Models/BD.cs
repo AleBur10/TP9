@@ -15,7 +15,7 @@ namespace TP9.Models
 {
     public class BD
     {
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-029; DataBase=DeltaGames;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=DESKTOP-1RNSEE0\SQLEXPRESS; DataBase=DeltaGames;Trusted_Connection=True;";
 
         private static List<Juego> listaJuegos = new List<Juego>();
         private static List<Categoria> listaCategorias = new List<Categoria>();
@@ -56,7 +56,6 @@ namespace TP9.Models
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
                 db.Execute(sql, new { Nombre = Jug.Nombre, CantLikes = Jug.CantLikes, Descripcion = Jug.Descripcion, FechaCreacion = Jug.FechaCreacion, Imagen = Jug.Imagen, Precio = Jug.Precio, fkCategoria = Jug.fkCategoria });
-                //db.Execute(sql, Jug);
             }
         }
 
@@ -102,6 +101,15 @@ namespace TP9.Models
                 return db.QueryFirstOrDefault<Usuario>(sql);
             }
         }
+        public static Usuario BuscarUsuarioXNombre(string nombre)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Usuarios WHERE Nombre = @Nombre";
+                return db.QueryFirstOrDefault<Usuario>(sql, new{ Nombre = nombre });
+            }
+        }
+
 
     }
 }
