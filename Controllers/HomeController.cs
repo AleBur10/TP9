@@ -75,6 +75,16 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult OlvidoContraseña(Usuario U)
+    {
+        ViewBag.Usuario = BD.BuscarContraXUsuario(U.Nombre);
+        ViewBag.Mensaje = "La contraseña es: " + ViewBag.Usuario.Contraseña;
+        return View();
+    }
+        public IActionResult BuscarOlvidoContraseña()
+    {
+        return View("OlvidoContraseña");
+    }
     [HttpPost]
     public IActionResult InsertarUsuario(Usuario U, string Contraseña2)
     {
